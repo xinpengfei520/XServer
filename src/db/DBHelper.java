@@ -11,9 +11,10 @@ import java.sql.SQLException;
  */
 public class DBHelper {
 
-	public static final String url = "jdbc:mysql://localhost:3306/school?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false";
-	public static final String name = "com.mysql.jdbc.Driver";
-	public static final String user = "xinpengfei";
+	// ?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+	public static final String url = "jdbc:mysql://localhost:3306/school?serverTimezone=UTC&useSSL=false";
+	public static final String driverName = "com.mysql.cj.jdbc.Driver";
+	public static final String userName = "xpf";
 	public static final String password = "123456";
 
 	public Connection conn = null;
@@ -21,9 +22,8 @@ public class DBHelper {
 
 	public DBHelper(String sql) {
 		try {
-			Class.forName(name);
-			//Class.forName("org.gjt.mm.mysql.Driver").newInstance();
-			conn = DriverManager.getConnection(url, user, password);
+			Class.forName(driverName);
+			conn = DriverManager.getConnection(url, userName, password);
 			if (conn != null) {
 				pst = conn.prepareStatement(sql);
 			} else {
