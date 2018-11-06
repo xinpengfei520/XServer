@@ -12,10 +12,11 @@ import java.sql.SQLException;
 public class DBHelper {
 
 	// ?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
-	public static final String url = "jdbc:mysql://localhost:3306/school?serverTimezone=UTC&useSSL=false";
+	//public static final String url = "jdbc:mysql://localhost:3306/school?serverTimezone=UTC&useSSL=false";
+	public static final String url = "jdbc:mysql://47.98.211.175:3306/school?serverTimezone=UTC&useSSL=false";
 	public static final String driverName = "com.mysql.cj.jdbc.Driver";
-	public static final String userName = "xpf";
-	public static final String password = "123456";
+	public static final String userName = "root";
+	public static final String password = "Xpf123456@";
 
 	public Connection conn = null;
 	public PreparedStatement pst = null;
